@@ -89,7 +89,7 @@
       <div class="col s12 m6 l3">
         <div class="card-panel center green darken-3 white-text">
           <i class="material-icons medium">insert_emoticon</i>
-          <h3>2800</h3>
+          <h3 class="count">2800</h3>
           <h5>Users Visited</h5>
           <div class="progress center grey lighten-1">
             <div class="determinate" style='width: 50%;'></div>
@@ -97,46 +97,164 @@
         </div>
       </div>
       <div class="col s12 m6 l3">
-        <div class="card-panel center green darken-3 white-text">
-          <i class="material-icons medium">insert_emoticon</i>
-          <h3>2800</h3>
-          <h5>Users Visited</h5>
+        <div class="card-panel center green-text">
+          <i class="material-icons medium">edit</i>
+          <h3 class="count">120</h3>
+          <h5>Bog Posts</h5>
           <div class="progress center grey lighten-1">
-            <div class="determinate" style='width: 50%;'></div>
+            <div class="determinate" style='width: 20%;'></div>
           </div>
         </div>
       </div>
       <div class="col s12 m6 l3">
         <div class="card-panel center green darken-3 white-text">
-          <i class="material-icons medium">add</i>
-          <h3>2800</h3>
-          <h5>Users Visited</h5>
+          <i class="material-icons medium"> mode_comment</i>
+          <h3 class="count">1500</h3>
+          <h5>Commets</h5>
           <div class="progress center grey lighten-1">
-            <div class="determinate" style='width: 50%;'></div>
+            <div class="determinate" style='width: 40%;'></div>
           </div>
         </div>
       </div>
       <div class="col s12 m6 l3">
-        <div class="card-panel center green darken-3 white-text">
-          <i class="material-icons medium">insert_emoticon</i>
-          <h3>2800</h3>
-          <h5>Users Visited</h5>
+        <div class="card-panel center green-text">
+          <i class="material-icons medium">supervisor_account</i>
+          <h3 class="count">350</h3>
+          <h5>Users</h5>
           <div class="progress center grey lighten-1">
-            <div class="determinate" style='width: 50%;'></div>
+            <div class="determinate" style='width: 20%;'></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+<!-- section: chart -->
+<section class="section section-chart green lighten-4">
+  <div class="row">
+    <div class="col s12 m6 l8">
+      <div class="card-panel">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+    </div>
+    <div class="col l4 m6 s12">
+      <ul class="collection with-header latest-comments">
+        <li class="collection-header">
+          <h5>Recent Comments</h5>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person1.jpeg" alt="" class="circle">
+          <span class="title">Sanjeet</span>
+          <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labrum.</p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="red-text deny">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person1.jpeg" alt="" class="circle">
+          <span class="title">Sanjeet</span>
+          <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labrum.</p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="red-text deny">Deny</a>
+        </li>
+        <li class="collection-item avatar">
+          <img src="img/person1.jpeg" alt="" class="circle">
+          <span class="title">Sanjeet</span>
+          <p class="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco labrum.</p>
+          <a href="#" class="approve green-text">Approve</a> |
+          <a href="#" class="red-text deny">Deny</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+
+
+<!-- preloader -->
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script>
+  $('.section').hide();
+
+  setTimeout(function() {
     $(document).ready(function () {
+      $('.section').fadeIn();
+      $('.preloader-wrapper').fadeOut();
       // Custom JS & jQuery here
     $('.sidenav').sidenav();
+
+    $('.count').each(function() {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 1500,
+        easing: 'swing',
+        step: function(now) {
+          $(this).text(Math.ceil(now))
+        }
+      })
+    })
+    //comment section
+    var toastHTML = '<span class="green-text">Comment Approved!</span><button class="btn-flat toast-action">Undo</button>';
+    $('.approve').click(function(e) {
+      M.toast({html: toastHTML})
+      e.preventDefault();
     });
+    $('.deny').click(function(e) {
+      M.toast({html: '<span class="red-text">Comment Denied</span><button class="btn-flat toast-action">Undo</button>'})
+      e.preventDefault();
+    })
+    });
+  }, 1000);
+
+
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+    	animationEnabled: true,
+    	theme: "light2",
+    	title:{
+    		text: "Simple Line Chart"
+    	},
+    	axisY:{
+    		includeZero: false
+    	},
+    	data: [{
+    		type: "line",
+    		dataPoints: [
+    			{ y: 450 },
+    			{ y: 414},
+    			{ y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+    			{ y: 460 },
+    			{ y: 450 },
+    			{ y: 500 },
+    			{ y: 480 },
+    			{ y: 480 },
+    			{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+    			{ y: 500 },
+    			{ y: 480 },
+    			{ y: 510 }
+    		]
+    	}]
+    });
+    setTimeout(function() {
+      chart.render();
+    }, 1000);
+    }
+
   </script>
 </body>
 
