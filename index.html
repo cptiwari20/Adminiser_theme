@@ -167,22 +167,198 @@
   </div>
 </section>
 
+<!-- section: Recent Posts and creat a post -->
+<section class="section section-recent-posts grey lighten-4">
+  <div class="row">
+    <div class="col s12 m6 l8">
+      <table class="centered striped highlight">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Categories</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>What is good?</td>
+            <td>Self-improvement</td>
+            <td><a href="#" class="btn green darken-3">More Details</a></td>
+          </tr>
+          <tr>
+            <td>20 things</td>
+            <td>Web Development</td>
+            <td><a href="#" class="btn green darken-3">More Details</a></td>
+          </tr>
+          <tr>
+            <td>What is good life</td>
+            <td>Self-improvement</td>
+            <td><a href="#" class="btn green darken-3">More Details</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-header">
+            <h4> Add todos </h4>
+          </div>
+          <form class="todo-form">
+            <input type="text" id="todo">
+          </form>
+        <ul class="collection todos">
+          <li class="collection-item">
+            <div>Todo item
+              <a href="#!" class="delete secondary-item">
+                <i class="material-icons right">close</i>
+              </a>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div>Todoitem
+              <a href="#!" class="delete secondary-item">
+                <i class="material-icons right">close</i>
+              </a>
+            </div>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- floating buttons -->
+<div class="fixed-action-btn">
+  <div class="btn-floating btn-large">
+    <i class="material-icons">add</i>
+  </div>
+  <ul>
+    <li>
+      <a class="btn-floating modal-trigger" href="#user-modal">
+        <i class="material-icons">supervisor_account</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating modal-trigger" href="#category-modal">
+        <i class="material-icons">folder</i>
+      </a>
+    </li>
+    <li>
+      <a class="btn-floating modal-trigger" href="#post-modal">
+        <i class="material-icons">mode_edit</i>
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- footer -->
+<footer class="section green darken-2 white-text center">
+  <p>Adminiser &copy; 2018 </p>
+</footer>
+
+
+<!-- modals -->
+<!-- post modal -->
+ <div id="post-modal" class="modal">
+   <div class="modal-content">
+     <h4>Add a post</h4>
+    <form>
+      <div class="input-field">
+        <input type="text" id="title">
+        <label for="title">Title</label>
+      </div>
+      <div class="input-field">
+        <select class="category">
+          <option>web-Development</option>
+          <option>Management-skill</option>
+          <option>Self-improvement</option>
+          <option>Entrepreneurship</option>
+          <option>Other</option>
+        </select>
+
+        <label for="category">select Categories</label>
+      </div>
+      <div class="input-field">
+        <textarea class="materialize-textarea" name="body" id="body"></textarea>
+        <label for="body">Body</label>
+      </div>
+    </form>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+   </div>
+ </div>
+
+ <!-- category modal -->
+  <div id="category-modal" class="modal">
+    <div class="modal-content">
+      <h4>Select a category</h4>
+     <form>
+       <div class="input-field">
+         <select class="category">
+           <option>web-Development</option>
+           <option>Management-skill</option>
+           <option>Self-improvement</option>
+           <option>Entrepreneurship</option>
+           <option>Other</option>
+         </select>
+
+         <label for="category">select Categories</label>
+       </div>
+     </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+
+<!-- user_modal -->
+<div id="user-modal" class="modal">
+  <div class="modal-content">
+    <h4>Add a user</h4>
+   <form>
+     <div class="input-field">
+       <input type="text" id="title">
+       <label for="title">Name</label>
+     </div>
+     <div class="input-field">
+       <input type="text" id="title1">
+       <label for="title1">Email</label>
+     </div>
+     <div class="input-field">
+       <input type="password" id="title3">
+       <label for="title3">Pasword</label>
+     </div>
+     <div class="input-field">
+       <input type="password" id="title4">
+       <label for="title4">confirm-password</label>
+     </div>
+
+   </form>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+  </div>
+</div>
+
 
 
 <!-- preloader -->
 <div class="preloader-wrapper big active">
-    <div class="spinner-layer spinner-green-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div><div class="gap-patch">
-        <div class="circle"></div>
-      </div><div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
+  <div class="spinner-layer spinner-green-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
     </div>
   </div>
+</div>
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdn.ckeditor.com/ckeditor5/11.1.0/classic/ckeditor.js"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
   <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -195,6 +371,10 @@
       $('.preloader-wrapper').fadeOut();
       // Custom JS & jQuery here
     $('.sidenav').sidenav();
+    $('select').formSelect();
+    $('.modal').modal();
+    $('.fixed-action-btn').floatingActionButton();
+
 
     $('.count').each(function() {
       $(this).prop('Counter', 0).animate({
@@ -217,6 +397,34 @@
       M.toast({html: '<span class="red-text">Comment Denied</span><button class="btn-flat toast-action">Undo</button>'})
       e.preventDefault();
     })
+    $('.todo-form').submit(function(e) {
+      let output = `<li class="collection-item">
+        <div>${$('#todo').val()}
+          <a href="#!" class="delete secondary-item">
+            <i class="material-icons right">close</i>
+          </a>
+        </div>
+      </li>`
+      $('.todos').append(output);
+      M.toast({html: '<span class="green-text">Todo added</span><button class="btn-flat toast-action">Undo</button>'});
+      e.preventDefault();
+    });
+
+    $('.todos').on('click', '.delete', function(e) {
+      $(this).parent().parent().remove()
+        M.toast({html: '<span class="red-text">Todo deleted</span><button class="btn-flat toast-action">Undo</button>'});
+      e.preventDefault();
+    });
+
+    // ck-editor
+    ClassicEditor
+    				.create( document.querySelector( '#body' ) )
+    				.then( editor => {
+    					console.log( editor );
+    				} )
+    				.catch( error => {
+    					console.error( error );
+    				} );
     });
   }, 1000);
 
